@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Untitled Project — Bert Moss, Motion Graphics &amp; Video Editing, NYC</title>
+  <meta name="description" content="Bert Moss — NYC video editor, motion graphics animator and director. Short form, high impact work for social, OOH billboards and broadcast.">
+  <meta property="og:title" content="The Untitled Project — Bert Moss">
+  <meta property="og:description" content="Motion graphics, animation, design and video editing. 22 years in NYC advertising.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="The Untitled Project, home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">THE UNTITLED<br>PROJECT</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Intro">
+      <div class="hero-video" id="heroVideo" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="eyebrow" id="roles"></p>
+        <h1 class="hero-title">
+          <span class="line">MADE TO</span>
+          <span class="line cycle-wrap"><span class="cycle" id="cycle">MOVE</span><span class="dot">.</span></span>
+          <span class="line outline small" id="personLine">BERT MOSS / NYC</span>
+        </h1>
+        <div class="hero-foot">
+          <p class="hero-sub" id="headline"></p>
+          <button class="play-reel" id="playReel" type="button">
+            <span class="play-icon" aria-hidden="true"></span>
+            <span>Play reel <small>2026</small></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT MARQUEE -->
+    <section class="marquee" id="clients" aria-label="Clients">
+      <div class="marquee-track" id="marquee"></div>
+    </section>
+
+    <!-- WORK -->
+    <section class="work" id="work" aria-labelledby="workTitle">
+      <div class="section-head">
+        <h2 id="workTitle" class="section-title">Selected<br><span class="accent">Work</span></h2>
+        <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+      </div>
+      <ol class="grid" id="grid"></ol>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle" class="section-title reveal">About<br><span class="accent">Bert</span></h2>
+      <div class="about-body">
+        <div class="bio reveal" id="bio"></div>
+        <ul class="stats reveal" id="stats"></ul>
+        <div class="caps reveal">
+          <h3>What I do</h3>
+          <ul id="caps"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contactTitle">
+      <p class="eyebrow">Available for freelance — quotes &amp; bookings</p>
+      <h2 id="contactTitle" class="contact-title">LET'S<br>MAKE<br>SOMETHING<span class="dot">.</span></h2>
+      <a class="contact-email" id="email" href="#"></a>
+      <p class="contact-meta" id="contactMeta"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="copy"></span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
+    <button class="lb-close" id="lbClose" type="button" aria-label="Close video">×</button>
+    <div class="lb-frame"><div class="lb-player" id="lbPlayer"></div></div>
+    <div class="lb-info">
+      <p class="lb-client" id="lbClient"></p>
+      <h3 id="lbTitle"></h3>
+      <p id="lbBlurb"></p>
+    </div>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
