@@ -65,6 +65,11 @@ Current DNS, checked 2026-10-01: nameservers `ns12/ns13.wixdns.net`. MX = Google
 - `bunnyCdn` in `content.js` is the library's CDN hostname; the site uses it for thumbnails and the animated hover preview.
 - In Bunny → your Stream library → **Security**, add `theuntitledproject.com`, `www.theuntitledproject.com` and your `….pages.dev` address to the allowed domains. If those are missing, thumbnails and the player are blocked on the site.
 
+## Link previews (iMessage, Slack, LinkedIn)
+- The preview card is `og-image.jpg` (1200×630). The tags pointing to it are at the top of `index.html`.
+- **When the site moves to theuntitledproject.com**, change `https://evilbert-utp.github.io/website/` to `https://theuntitledproject.com/` in the three `og:url` / `og:image` / `twitter:image` lines.
+- Phones remember previews per link. To see a new preview, send the link with something new on the end, e.g. `?v=14`.
+
 ## Video notes
 - The hero background loop and the hover previews use Vimeo's *background* player mode, which needs a paid Vimeo plan. On a free plan those parts quietly fall back to the still thumbnail, and the click-to-play lightbox still works.
 - To skip that dependency, export a short silent loop (720p, under ~10 MB), drop it in `media/`, and set `reelLoop: "media/reel-loop.mp4"` (or `loop:` on a project).
