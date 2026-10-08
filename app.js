@@ -247,6 +247,18 @@
   window.addEventListener("resize", navTone);
   navTone();
 
+  /* ---------- mobile menu ---------- */
+  var menuBtn = $("menuToggle");
+  function setMenu(open) {
+    nav.classList.toggle("open", open);
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    menuBtn.textContent = open ? "Close" : "Menu";
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+  menuBtn.addEventListener("click", function () { setMenu(!nav.classList.contains("open")); });
+  [].forEach.call(document.querySelectorAll("#siteNav a"), function (a) { a.addEventListener("click", function () { if (nav.classList.contains("open")) setMenu(false); }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("open")) setMenu(false); });
+
   /* ---------- Home / back-to-top links ---------- */
   [].forEach.call(document.querySelectorAll('a[href="#top"]'), function (link) {
     link.addEventListener("click", function (e) {
