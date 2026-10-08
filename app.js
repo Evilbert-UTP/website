@@ -85,6 +85,7 @@
     var hv = $("heroVideo"), node = S.reelLoop ? mp4Bg(S.reelLoop) : vimeoBg(S.reelVimeo);
     node.addEventListener(S.reelLoop ? "playing" : "load", function () { setTimeout(function () { hv.classList.add("on"); }, 600); });
     hv.appendChild(node);
+    hv.parentNode.classList.add("has-video");
   }
 
   /* ---------- client marquee ---------- */
