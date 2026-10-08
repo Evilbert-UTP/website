@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Untitled Project — Bert Moss, Motion Graphics &amp; Video Editing, NYC</title>
-  <meta name="description" content="Bert Moss — NYC video editor, motion graphics animator and director. Short form, high impact work for social, OOH billboards and broadcast.">
+  <title>The Untitled Project — Bert Moss, Video Editor, Motion Graphics &amp; Director</title>
+  <meta name="description" content="Bert Moss — Brooklyn video editor, motion graphics artist and director. Twenty-plus years cutting and animating for NYC agencies, now fluent in generative AI.">
   <meta property="og:title" content="The Untitled Project — Bert Moss">
-  <meta property="og:description" content="Motion graphics, animation, design and video editing. 22 years in NYC advertising.">
+  <meta property="og:description" content="Video editor, motion graphics artist and director. Twenty-plus years in NYC advertising, now fluent in generative AI.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0d0d0d">
+  <meta name="theme-color" content="#1e1b18">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,9 @@
       <span class="brand-text">THE UNTITLED<br>PROJECT</span>
     </a>
     <nav aria-label="Main">
+      <a href="#top" class="nav-home">Home</a>
       <a href="#work">Work</a>
+      <a href="#ai" class="nav-ai">AI</a>
       <a href="#about">About</a>
       <a href="#clients">Clients</a>
       <a href="#contact" class="nav-cta">Contact</a>
@@ -38,18 +40,20 @@
       <div class="hero-video" id="heroVideo" aria-hidden="true"></div>
       <div class="hero-grain" aria-hidden="true"></div>
       <div class="hero-inner">
-        <p class="eyebrow" id="roles"></p>
-        <h1 class="hero-title">
-          <span class="line">MADE TO</span>
-          <span class="line cycle-wrap"><span class="cycle" id="cycle">MOVE</span><span class="dot">.</span></span>
-          <span class="line outline small" id="personLine">BERT MOSS / NYC</span>
-        </h1>
+        <h1 class="hero-name" id="personLine">BERT MOSS</h1>
+        <p class="hero-title" id="cycleWrap">
+          <span class="line cycle-wrap"><span class="cycle" id="cycle" aria-hidden="true"></span></span>
+          <span class="sr-only" id="cycleText"></span>
+        </p>
         <div class="hero-foot">
           <p class="hero-sub" id="headline"></p>
-          <button class="play-reel" id="playReel" type="button">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span>Play reel <small>2026</small></span>
-          </button>
+          <div class="hero-links">
+            <a class="ai-link" href="#ai"><span class="spark" aria-hidden="true">✦</span> AI work</a>
+            <button class="play-reel" id="playReel" type="button">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span>Play reel <small>2026</small></span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -68,6 +72,25 @@
       <ol class="grid" id="grid"></ol>
     </section>
 
+    <!-- AI -->
+    <section class="ai" id="ai" aria-labelledby="aiTitle">
+      <div class="ai-top">
+        <h2 id="aiTitle" class="section-title reveal"><span class="ai-title-ai">AI</span><br>Lab</h2>
+        <div class="ai-intro reveal">
+          <p class="eyebrow eyebrow-rule">AI production</p>
+          <p id="aiIntro"></p>
+          <ul class="tools" id="aiTools"></ul>
+        </div>
+      </div>
+      <ol class="approach reveal" id="aiApproach"></ol>
+      <ol class="grid" id="aiGrid"></ol>
+      <div class="ai-empty reveal" id="aiEmpty" hidden>
+        <p id="aiEmptyText"></p>
+        <a href="#contact">Get in touch</a>
+      </div>
+      <p class="ai-note" id="aiNote"></p>
+    </section>
+
     <!-- ABOUT -->
     <section class="about" id="about" aria-labelledby="aboutTitle">
       <h2 id="aboutTitle" class="section-title reveal">About<br><span class="accent">Bert</span></h2>
@@ -75,8 +98,12 @@
         <div class="bio reveal" id="bio"></div>
         <ul class="stats reveal" id="stats"></ul>
         <div class="caps reveal">
-          <h3>What I do</h3>
+          <h3>Craft</h3>
           <ul id="caps"></ul>
+        </div>
+        <div class="caps reveal" id="softwareWrap">
+          <h3>Software</h3>
+          <ul id="software"></ul>
         </div>
       </div>
     </section>
@@ -100,7 +127,7 @@
     <button class="lb-close" id="lbClose" type="button" aria-label="Close video">×</button>
     <div class="lb-frame"><div class="lb-player" id="lbPlayer"></div></div>
     <div class="lb-info">
-      <p class="lb-client" id="lbClient"></p>
+      <p class="lb-client"><span id="lbClient"></span><span class="lb-ai" id="lbAi" hidden>AI-generated</span></p>
       <h3 id="lbTitle"></h3>
       <p id="lbBlurb"></p>
     </div>

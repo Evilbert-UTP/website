@@ -10,11 +10,16 @@
 
    vimeo:   the number at the end of the Vimeo link
             (https://vimeo.com/601184648  ->  "601184648")
+   bunny:   OR, for Bunny Stream, the two parts after /play/ in the link
+            (player.mediadelivery.net/play/774281/203c...  ->  "774281/203c...")
    tags:    any of the CATEGORIES below — they become the filter buttons
    loop:    OPTIONAL path to a short silent .mp4 in the /media folder,
             used for the hover preview instead of Vimeo (keep under 25 MB)
    thumb:   OPTIONAL path or URL to a custom thumbnail image.
-            If left out, the thumbnail is pulled from Vimeo automatically.
+            If left out, the thumbnail is pulled from Vimeo/Bunny automatically.
+            Bunny: when you set a custom thumbnail, Bunny gives it a NEW
+            file name (e.g. thumbnail_79ec2282.jpg). Put that name here.
+            Find it in Bunny → video → Thumbnail, or ask Claude to look it up.
 
    Rules that keep it working: text goes inside "quotes", every block
    ends with a comma, and don't delete the [ ] or { } brackets.
@@ -23,36 +28,86 @@
 window.SITE = {
   name: "The Untitled Project",
   person: "Bert Moss",
-  roles: ["Motion Graphics", "Animation", "Design", "Video Editing"],
+  roles: ["Video Editor", "Motion Graphics Artist", "Director"],
   headline: ["Short form.", "High impact."],
-  // Hero reads "MADE TO ____." — these words cycle in the blank
-  cycle: ["MOVE", "LOOP", "SELL", "POP", "PLAY"],
+  // Big orange words that cycle in the middle of the home page
+  cycle: ["Video editing", "Motion graphics", "AI generation", "VFX", "Directing", "Production management"],
+  // Bunny Stream video host (from a Bunny thumbnail URL). Used for thumbnails and hover previews.
+  bunnyCdn: "vz-151c3d5c-1a7.b-cdn.net",
   reelVimeo: "601184648",
   reelTitle: "Demo Reel 2026",
   reelLoop: "",                      // optional: "media/reel-loop.mp4"
   email: "bert@theuntitledproject.com",
   phone: "917-674-9492",             // set to "" to hide
-  location: "New York City",
+  location: "Brooklyn, NY",
+  heroPlace: "",                       // optional: shown after your name in the big hero outline text, e.g. "NYC"
   bio: [
-    "Bert has spent 22 years as a video editor, motion graphic animator and director for the NYC advertising industry.",
-    "He specializes in short form, high impact creative content for social media, OOH digital billboards and big screen conference presentations. His work includes music videos, large scale social media campaigns, original 2D animation concepts, and on-air TV spots in roles as lead animator, director, producer and studio manager."
+    "Twenty-plus years cutting and animating for NYC's biggest agencies — turning an AD's 11pm scribble into a spot that actually ships. After Effects lifer, edit-bay generalist, and now fluent in generative AI.",
+    "Video editor, motion graphics artist, and occasional director based in Brooklyn, with two decades inside NYC's advertising engine — agency floors at JWT, DDB, Wieden+Kennedy, and Anomaly, plus a standing freelance post house of his own. Has cut, animated, or finished work for Apple, Google, Meta, Marvel, Netflix, IBM, Citibank, Goldman Sachs, and Wayfair, across broadcast, social, video billboards, motion comics, and conference graphics. Built post-production process for an entire agency's account roster at RevHealth, and now brings generative AI into broadcast-quality production. Equally comfortable running the department and being the one editor a CD trusts with the launch cut."
   ],
-  stats: [
-    { value: "22", label: "Years in NYC advertising" },
-    { value: "60", label: "Variations in one Google Maps campaign" },
-    { value: "6", label: "Synced screens for Apple Arcade" }
-  ],
+  stats: [],                            // optional big numbers in About, e.g. { value: "20+", label: "Years in NYC advertising" }
   capabilities: [
-    "Editorial", "Motion graphics", "2D animation", "Art direction",
-    "Social campaigns & versioning", "OOH & Times Square billboards",
-    "Multi-screen retail displays", "Broadcast spots & trailers"
+    "Video Editing", "Motion Graphics", "Animation", "Directing",
+    "Post-Production Management", "Generative AI"
   ],
+  software: ["After Effects", "Premiere Pro", "Photoshop", "Illustrator", "ComfyUI", "Claude"],
+  // Scrolling client band (same list as the resume). Leave empty [] to build it from PROJECTS.
+  clients: ["Apple", "Google", "Meta", "Marvel", "Netflix", "IBM", "Citibank", "Goldman Sachs",
+            "Wayfair", "McDonald's", "Ford", "Bloomberg", "Red Bull", "DC Comics", "Walmart", "Skyrizi"],
   socials: [
     // { label: "Vimeo", url: "https://vimeo.com/yourname" },
     // { label: "Instagram", url: "https://instagram.com/yourname" },
-    // { label: "LinkedIn", url: "https://linkedin.com/in/yourname" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/bert-moss" },
   ]
 };
+
+/* ---------------------------------------------------------------------
+   AI LAB SECTION
+   --------------------------------------------------------------------- */
+window.AI = {
+  intro: "Comfortable building custom generation workflows in ComfyUI, with hands-on production experience across image and video AI generation tools. Built and maintained an automated, proprietary AI production pipeline from the ground up and successfully implemented production across test spots.",
+  tools: ["Claude", "ComfyUI", "Adobe Firefly", "LTX", "Minimax H3", "WAN Animate", "Flux", "Qwen"],
+  approach: [
+    { title: "Workflow, not hype", text: "A proprietary, automated production pipeline built from the ground up, so shots come back fast, consistent and art-directable." },
+    { title: "Every shot logged", text: "A per-shot record of what's AI and what's human, so legal and the client always know what they're approving." },
+    { title: "Straight into the edit", text: "Generations land in the project, ready to cut, comp and finish alongside live action and motion graphics." }
+  ],
+  emptyText: "New AI pieces are on the way. Ask to see recent work.",
+  note: "Pieces marked AI-generated were made with generative AI tools, then edited, composited and finished by hand."
+};
+
+/* AI PROJECTS — same fields as PROJECTS, plus:
+     tools:  what it was made with, shown on the card, e.g. ["ComfyUI", "Kling"]
+   Every AI project is automatically labelled "AI-generated" on the site.
+   Before posting a piece, check the model's licence allows public display
+   (some require an AI label, some are limited to certain countries).
+   While this list is empty the section shows the intro and a "get in touch" box.
+*/
+window.AI_PROJECTS = [
+  {
+    title: "Your Thing",
+    client: "Pfizer (spec)",
+    bunny: "774281/203c39aa-8c29-4e5c-9f46-c2fafa2c46f2",   // Bunny: "library/video ID" from the play link
+    thumb: "thumbnail_79ec2282.jpg",                         // custom Bunny thumbnail (new name each time you change it)
+    tools: [],                                               // e.g. ["ComfyUI", "LTX"]
+    blurb: "Spec spot made with generative AI. Not commissioned or endorsed by Pfizer."
+  },
+  {
+    title: "Mr Bowlingball Head",
+    client: "Personal",
+    bunny: "774281/23e62152-c158-4dee-b08a-bca5c5439240",
+    thumb: "thumbnail_4c4430f1.jpg",
+    tools: [],
+    blurb: "A whimsical AI exploration to get to grips with on-screen lip sync!"
+  },
+  // {
+  //   title: "Project name",
+  //   client: "Client or 'Personal project'",
+  //   vimeo: "123456789",
+  //   tools: ["ComfyUI", "Kling"],
+  //   blurb: "One or two lines about the piece and your role."
+  // },
+];
 
 window.CATEGORIES = ["Social", "OOH & Screens", "Broadcast", "Animation", "Corporate"];
 
