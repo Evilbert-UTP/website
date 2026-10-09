@@ -113,6 +113,20 @@ window.CATEGORIES = ["Social", "OOH & Screens", "Broadcast", "Animation", "Corpo
 
 window.PROJECTS = [
   {
+    title: "Strike Anywhere",
+    client: "Square × Area15",
+    bunny: "774281/e4ff9252-64c9-4894-9f70-0b3e51973acf",
+    tags: ["Corporate"],
+    blurb: "Promotional video for Square payments and Area15, in collaboration with The Gig Media."
+  },
+  {
+    title: "Black Goes First",
+    client: "Squarespace",
+    vimeo: "720444031",
+    tags: ["Corporate"],
+    blurb: "Promotional piece for Black chess players."
+  },
+  {
     title: "Instagram Drops",
     client: "Instagram",
     vimeo: "600485546",
@@ -245,16 +259,4 @@ window.PROJECTS = [
     tags: ["Social"],
     blurb: "Online promo spot for the video game F.E.A.R. 2, through DC Comics."
   }
-
-  /* NOT YET ON VIMEO — this one is a file uploaded to Wix. Upload it to
-     Vimeo, put the number in "vimeo", move the block up into the list
-     above (add a comma after the block before it), and it will appear.
-  {
-    title: "Strike Anywhere",
-    client: "Square × Area15",
-    vimeo: "",
-    tags: ["Social"],
-    blurb: "Promotional video for Square payments and Area15, in collaboration with The Gig Media."
-  }
-  */
 ];
