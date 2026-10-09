@@ -22,7 +22,7 @@ Portfolio site for **Bert Moss / The Untitled Project** — NYC (Brooklyn) video
 | `media/` | Optional self-hosted loops/thumbnails |
 
 ## Release rules (important)
-1. **Cache-busting:** `index.html` loads `styles.css?v=N`, `content.js?v=N`, `app.js?v=N`, and the og-image with `?v=N`. **Bump N on every change** (current: **16**). Without this, Safari/iPhones keep old JS/CSS and features look broken.
+1. **Cache-busting:** `index.html` loads `styles.css?v=N`, `content.js?v=N`, `app.js?v=N`, and the og-image with `?v=N`. **Bump N on every change** (current: **17**). Without this, Safari/iPhones keep old JS/CSS and features look broken.
 2. Link-preview tags (`og:url`, `og:image`, `twitter:image`) must be absolute `https://theuntitledproject.com/...` URLs.
 3. After a change, check **desktop (1440px), laptop (1024px) and phone (390px)** — Bert mostly reviews on his iPhone in Safari. Playwright/Chromium is a good stand-in; mention that real Safari wasn't tested.
 4. Keep commits small with plain-English messages. GitHub Pages republishes in ~1–2 minutes.
@@ -55,5 +55,4 @@ Portfolio site for **Bert Moss / The Untitled Project** — NYC (Brooklyn) video
 - Written documents for him (not code) as Word .docx files.
 
 ## Open items
-- **Square × Area15** spot (Square payments + Area15, with The Gig Media) only existed on Wix — needs re-uploading to Bunny before it can be added (commented out at the bottom of `content.js`).
 - Review DMARC reports after a few weeks; if only spoofers fail, move DMARC to `p=quarantine` (DNS change at Namecheap, with Bert).
