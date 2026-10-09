@@ -147,7 +147,12 @@
 
   /* ---------- work grid ---------- */
   var grid = $("grid"), cards = [];
-  P.forEach(function (p, i) { var li = makeCard(p, i, false); grid.appendChild(li); cards.push(li); });
+  /* the demo reel is always the first card, and only shows under "All" (it has no category tag) */
+  var reelCard = S.reelVimeo ? [{
+    title: S.reelTitle || "Demo Reel", client: S.person || S.name, vimeo: S.reelVimeo, loop: S.reelLoop || "",
+    tags: [], blurb: (S.roles || []).join(" · ")
+  }] : [];
+  reelCard.concat(P).forEach(function (p, i) { var li = makeCard(p, i, false); grid.appendChild(li); cards.push(li); });
 
   /* ---------- AI section ---------- */
   var AI = window.AI || {};
@@ -197,7 +202,7 @@
   /* filters */
   var filters = $("filters"), active = "All";
   ["All"].concat(CATS).forEach(function (cat) {
-    var count = cat === "All" ? P.length : P.filter(function (p) { return (p.tags || []).indexOf(cat) > -1; }).length;
+    var count = cat === "All" ? P.length + reelCard.length : P.filter(function (p) { return (p.tags || []).indexOf(cat) > -1; }).length;
     if (!count) return;
     var b = el("button", { type: "button", "aria-pressed": cat === "All" ? "true" : "false" }, esc(cat) + "<sup>" + count + "</sup>");
     b.addEventListener("click", function () {
