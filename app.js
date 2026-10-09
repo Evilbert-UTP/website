@@ -48,7 +48,7 @@
   $("cycleText").textContent = words.join(", ");
   function setWord(w) {
     cyc.style.fontSize = "";
-    cyc.innerHTML = esc(w) + '<span class="dot">.</span>';
+    cyc.textContent = w;
     /* shrink a single long word that would otherwise run off the edge (e.g. on phones) */
     var avail = cyc.parentNode.clientWidth;
     if (cyc.scrollWidth > avail) cyc.style.fontSize = (avail / cyc.scrollWidth) + "em";
