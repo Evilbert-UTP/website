@@ -121,10 +121,10 @@ window.PROJECTS = [
   },
   {
     title: "Black Goes First",
-    client: "",
+    client: "Squarespace",
     vimeo: "720444031",
     tags: ["Corporate"],
-    blurb: ""
+    blurb: "Promotional piece for Black chess players."
   },
   {
     title: "Instagram Drops",
