@@ -22,7 +22,7 @@ Portfolio site for **Bert Moss / The Untitled Project** — NYC (Brooklyn) video
 | `media/` | Optional self-hosted loops/thumbnails |
 
 ## Release rules (important)
-1. **Cache-busting:** `index.html` loads `styles.css?v=N`, `content.js?v=N`, `app.js?v=N`, and the og-image with `?v=N`. **Bump N on every change** (current: **19**). Without this, Safari/iPhones keep old JS/CSS and features look broken.
+1. **Cache-busting:** `index.html` loads `styles.css?v=N`, `content.js?v=N`, `app.js?v=N`, and the og-image with `?v=N`. **Bump N on every change** (current: **20**). Without this, Safari/iPhones keep old JS/CSS and features look broken.
 2. Link-preview tags (`og:url`, `og:image`, `twitter:image`) must be absolute `https://theuntitledproject.com/...` URLs.
 3. After a change, check **desktop (1440px), laptop (1024px) and phone (390px)** — Bert mostly reviews on his iPhone in Safari. Playwright/Chromium is a good stand-in; mention that real Safari wasn't tested.
 4. Keep commits small with plain-English messages. GitHub Pages republishes in ~1–2 minutes.
@@ -47,7 +47,7 @@ Portfolio site for **Bert Moss / The Untitled Project** — NYC (Brooklyn) video
 - **Don't display per-piece tools** — Bert prefers to discuss them in person. Leave `tools: []`. The general toolkit row in the section intro stays.
 - Before adding an AI piece, ask Bert which models were used and remind him to check that model's licence allows public, worldwide display (some licences restrict territories or require an AI label).
 - Spec work using a real brand gets a disclaimer in the blurb, e.g. "Spec spot … Not commissioned or endorsed by <brand>."
-- Current pieces: "Your Thing" (Pfizer spec) and "Mr Bowlingball Head" (Personal).
+- Current pieces: "Gridlock" (BMW spec, LTX 2.5), "Your Thing" (Pfizer spec) and "Mr Bowlingball Head" (Personal).
 
 ## Working with Bert
 - Freelance editor, not a developer: give plain-English summaries, short and practical. Explain *where to click* for anything he has to do himself (GitHub, Namecheap, Bunny).

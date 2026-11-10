@@ -85,6 +85,14 @@ window.AI = {
 */
 window.AI_PROJECTS = [
   {
+    title: "Gridlock",
+    client: "BMW (spec)",
+    bunny: "774281/560099c4-f918-4416-9748-e0ced894ee09",
+    thumb: "thumbnail_9fbf5660.jpg",
+    tools: [],
+    blurb: "Spec spot made with generative AI using model LTX 2.5. Not commissioned or endorsed by BMW."
+  },
+  {
     title: "Your Thing",
     client: "Pfizer (spec)",
     bunny: "774281/203c39aa-8c29-4e5c-9f46-c2fafa2c46f2",   // Bunny: "library/video ID" from the play link
